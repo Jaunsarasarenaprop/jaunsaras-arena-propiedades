@@ -1,176 +1,135 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaunsaras Arena Propiedades | El Pato</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <style>
-        .bg-custom-green { background-color: #2D5A27; }
-        .text-custom-green { color: #2D5A27; }
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200');
-            background-size: cover; background-position: center;
-        }
-        #modal-detalle { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; overflow-y: auto; padding: 15px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inmobiliaria en El Pato | Jaunsaras Arena Propiedades</title>
+
+  <meta name="description" content="Jaunsaras Arena Propiedades. Venta de casas, lotes y terrenos en El Pato y Berazategui.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .bg-custom-green { background-color: #2D5A27; }
+    .text-custom-green { color: #2D5A27; }
+    #modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:50; overflow-y:auto; }
+  </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
 
-    <nav class="bg-white shadow-md p-3 sticky top-0 z-50 border-b-4 border-custom-green">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/">
-                <img src="logo.jpg" alt="Logo" class="h-16 w-auto object-contain" onerror="this.src='https://via.placeholder.com/200x80?text=Jaunsaras+Arena'">
-            </a>
-            <div class="flex flex-col text-right">
-                <a href="https://wa.me/5491130687117" class="text-green-700 font-bold text-sm hover:text-green-500 transition"><i class="fab fa-whatsapp"></i> 11 3068-7117</a>
-                <a href="https://wa.me/5491131049882" class="text-green-700 font-bold text-sm hover:text-green-500 transition"><i class="fab fa-whatsapp"></i> 11 3104-9882</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero-bg text-white py-16 px-4 text-center">
-        <h1 class="text-3xl md:text-5xl font-bold mb-4 uppercase tracking-wider">Jaunsaras Arena Propiedades</h1>
-        <p class="text-lg italic mb-8">Calle Colectora Autovía 2 N°12271, El Pato</p>
-        
-        <a href="https://inmuebles.mercadolibre.com.ar/_CustId_186078242" target="_blank" class="inline-block bg-yellow-400 text-blue-900 font-extrabold px-8 py-4 rounded-full hover:bg-yellow-500 transition shadow-2xl scale-105 hover:scale-110">
-            VER TODAS EN MERCADO LIBRE <i class="fas fa-external-link-alt ml-2"></i>
-        </a>
-    </header>
-
-    <main class="container mx-auto py-12 px-4">
-        <div class="flex justify-between items-end mb-8 border-b-2 border-custom-green pb-2">
-            <h2 class="text-2xl font-bold text-gray-700">Inmuebles Destacados</h2>
-            <p class="text-sm text-gray-500 italic">Clic en la foto para ver más detalles</p>
-        </div>
-        <div id="lista-propiedades" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
-    </main>
-
-    <div id="modal-detalle">
-        <div class="bg-white max-w-5xl mx-auto rounded-xl overflow-hidden relative mt-4 shadow-2xl">
-            <button onclick="cerrarModal()" class="absolute top-4 right-4 bg-gray-900 text-white w-10 h-10 rounded-full z-10 flex items-center justify-center hover:bg-black transition">✕</button>
-            <div id="contenido-modal"></div>
-        </div>
+<!-- NAV -->
+<nav class="bg-white shadow p-4 sticky top-0 z-40 border-b-4 border-custom-green">
+  <div class="container mx-auto flex justify-between items-center">
+    <img src="./logo.jpg" class="h-14" alt="Jaunsaras Arena Propiedades">
+    <div class="text-right text-sm font-bold text-green-700">
+      <a href="https://wa.me/5491130687117" class="block"><i class="fab fa-whatsapp"></i> 11 3068-7117</a>
+      <a href="https://wa.me/5491131049882" class="block"><i class="fab fa-whatsapp"></i> 11 3104-9882</a>
     </div>
+  </div>
+</nav>
 
-    <footer class="bg-gray-900 text-white py-12 px-4 border-t-4 border-custom-green">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-            <div>
-                <h3 class="text-xl font-bold text-custom-green mb-4">Ubicación</h3>
-                <p class="text-gray-400">Calle Colectora Autovía 2 N°12271</p>
-                <p class="text-gray-400">C.A. El Pato, Berazategui</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-custom-green mb-4">Horarios de Atención</h3>
-                <p class="text-gray-400 font-bold italic text-sm mb-1 uppercase tracking-widest">Lunes a Viernes:</p>
-                <p class="text-gray-400">10:00 a 12:30 | 16:30 a 19:00</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-custom-green mb-4">Contactos Directos</h3>
-                <p class="text-gray-400"><i class="fab fa-whatsapp text-green-500 mr-2"></i>11 3104-9882 (Oficina)</p>
-                <p class="text-gray-400"><i class="fab fa-whatsapp text-green-500 mr-2"></i>11 3068-7117 (Ventas)</p>
-            </div>
+<!-- HERO -->
+<header class="bg-gray-900 text-white text-center py-16">
+  <h1 class="text-4xl font-extrabold mb-3">Jaunsaras Arena Propiedades</h1>
+  <p class="italic mb-6">El Pato · Berazategui</p>
+
+  <a href="https://inmuebles.mercadolibre.com.ar/_CustId_186078242" target="_blank"
+     class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-extrabold hover:bg-yellow-500 transition">
+    VER PROPIEDADES EN MERCADO LIBRE
+  </a>
+</header>
+
+<!-- LISTADO -->
+<main class="container mx-auto py-12 px-4">
+  <h2 class="text-2xl font-bold mb-6 border-b pb-2">Propiedades</h2>
+  <div id="propiedades" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+</main>
+
+<!-- MODAL -->
+<div id="modal">
+  <div class="bg-white max-w-5xl mx-auto my-10 rounded-xl overflow-hidden relative">
+    <button onclick="cerrarModal()" class="absolute top-4 right-4 bg-black text-white w-10 h-10 rounded-full">✕</button>
+    <div id="modal-content" class="p-6"></div>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5491130687117"
+   class="fixed bottom-5 right-5 bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-xl hover:scale-110 transition z-50">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+const OWNER = "Jaunsarasarenaprop";
+const REPO = "jaunsaras-arena-propiedades";
+const BASE = `https://api.github.com/repos/${OWNER}/${REPO}/contents/content/propiedades`;
+
+async function cargarPropiedades() {
+  const cont = document.getElementById("propiedades");
+  const res = await fetch(BASE);
+  const carpetas = await res.json();
+
+  cont.innerHTML = "";
+
+  for (const carpeta of carpetas) {
+    if (carpeta.type !== "dir") continue;
+
+    const dataRes = await fetch(`${BASE}/${carpeta.name}/data.json`);
+    const data = await dataRes.json();
+
+    const filesRes = await fetch(`${BASE}/${carpeta.name}`);
+    const files = await filesRes.json();
+    const fotos = files.filter(f => f.name.match(/\.(jpg|png|webp)$/i));
+
+    const portada = fotos[0]?.download_url || "";
+
+    cont.innerHTML += `
+      <div onclick="abrirModal('${carpeta.name}')"
+           class="bg-white rounded-xl shadow cursor-pointer hover:shadow-xl transition">
+        <img src="${portada}" class="h-60 w-full object-cover rounded-t-xl">
+        <div class="p-5">
+          <span class="text-xs bg-custom-green text-white px-2 py-1 rounded">${data.category}</span>
+          <h3 class="text-xl font-bold mt-2">${data.title}</h3>
+          <p class="text-custom-green text-2xl font-black">${data.price}</p>
+          <p class="text-blue-600 text-sm mt-3 underline">Ver detalles</p>
         </div>
-        <div class="text-center mt-10 pt-8 border-t border-gray-800 text-gray-600 text-xs">
-            &copy; 2025 Jaunsaras Arena Propiedades. Todos los derechos reservados.
-        </div>
-    </footer>
+      </div>
+    `;
+  }
+}
 
-    <script>
-        let propiedadesData = [];
+async function abrirModal(slug) {
+  const modal = document.getElementById("modal");
+  const content = document.getElementById("modal-content");
 
-        async function cargarPropiedades() {
-            const container = document.getElementById('lista-propiedades');
-            try {
-                const response = await fetch('https://api.github.com/repos/Jaunsarasarenaprop/jaunsaras-arena-propiedades/contents/content/propiedades');
-                const files = await response.json();
-                container.innerHTML = "";
+  const data = await (await fetch(`${BASE}/${slug}/data.json`)).json();
+  const files = await (await fetch(`${BASE}/${slug}`)).json();
+  const fotos = files.filter(f => f.name.match(/\.(jpg|png|webp)$/i));
 
-                if (!Array.isArray(files)) return;
+  content.innerHTML = `
+    <h2 class="text-3xl font-bold mb-2">${data.title}</h2>
+    <p class="text-custom-green text-2xl font-black mb-4">${data.price}</p>
+    <p class="mb-6">${data.description}</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      ${fotos.map(f => `<img src="${f.download_url}" class="rounded shadow">`).join("")}
+    </div>
+  `;
 
-                for (const [index, file] of files.entries()) {
-                    if (file.name.endsWith('.md')) {
-                        const res = await fetch(file.download_url);
-                        const text = await res.text();
-                        
-                        const title = text.match(/title: "(.*)"/)?.[1] || text.match(/title: (.*)/)?.[1] || "Propiedad";
-                        const price = text.match(/price: "(.*)"/)?.[1] || text.match(/price: (.*)/)?.[1] || "Consultar";
-                        const image = text.match(/image: "(.*)"/)?.[1] || text.match(/image: (.*)/)?.[1] || "";
-                        const category = text.match(/category: (.*)/)?.[1] || "Venta";
-                        const description = text.split('---').pop().trim();
-                        
-                        const photos = [];
-                        const photoMatches = text.matchAll(/photo: "(.*?)"/g);
-                        for (const match of photoMatches) { photos.push(match[1]); }
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+}
 
-                        propiedadesData[index] = { title, price, image, category, description, photos };
+function cerrarModal() {
+  document.getElementById("modal").style.display = "none";
+  document.body.style.overflow = "auto";
+}
 
-                        container.innerHTML += `
-                            <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition border border-gray-200 group" onclick="abrirDetalle(${index})">
-                                <div class="overflow-hidden">
-                                    <img src="${image}" class="w-full h-64 object-cover border-b group-hover:scale-110 transition duration-500">
-                                </div>
-                                <div class="p-5">
-                                    <span class="text-[10px] font-bold text-white bg-custom-green px-2 py-1 rounded uppercase tracking-widest">${category}</span>
-                                    <h2 class="text-xl font-bold mt-2 leading-tight min-h-[3rem] line-clamp-2">${title}</h2>
-                                    <p class="text-custom-green text-2xl font-black mt-1">${price}</p>
-                                    <p class="text-blue-600 font-bold mt-4 text-xs underline italic">Ver fotos y descripción →</p>
-                                </div>
-                            </div>
-                        `;
-                    }
-                }
-            } catch (e) { container.innerHTML = "<p class='col-span-full text-center'>Publicá tu primera propiedad para verla aquí.</p>"; }
-        }
+cargarPropiedades();
+</script>
 
-        function abrirDetalle(index) {
-            const p = propiedadesData[index];
-            const modal = document.getElementById('modal-detalle');
-            const contenido = document.getElementById('contenido-modal');
-            
-            let galeriaHtml = p.photos.map(f => `<img src="${f}" class="w-full rounded mb-4 shadow-sm border" loading="lazy">`).join('');
-            
-            contenido.innerHTML = `
-                <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <div>
-                        <span class="text-xs font-bold text-white bg-custom-green px-3 py-1 rounded-full uppercase tracking-widest">${p.category}</span>
-                        <h2 class="text-3xl font-bold mt-4 mb-2">${p.title}</h2>
-                        <p class="text-custom-green text-3xl font-black mb-6 border-b-2 border-gray-100 pb-4">${p.price}</p>
-                        <div class="prose max-w-none text-gray-700 text-lg leading-relaxed mb-8">
-                            <h4 class="font-bold text-gray-400 uppercase text-xs mb-4 tracking-widest">Descripción</h4>
-                            ${p.description.replace(/\n/g, '<br>')}
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t">
-                            <a href="https://wa.me/5491130687117?text=Me interesa esta propiedad: ${p.title}" class="bg-green-600 text-white text-center py-4 rounded-xl font-bold hover:bg-green-700 transition flex items-center justify-center gap-2">
-                                <i class="fab fa-whatsapp"></i> Ventas 11 3068-7117
-                            </a>
-                            <a href="https://wa.me/5491131049882?text=Me interesa esta propiedad: ${p.title}" class="bg-green-500 text-white text-center py-4 rounded-xl font-bold hover:bg-green-600 transition flex items-center justify-center gap-2">
-                                <i class="fab fa-whatsapp"></i> Oficina 11 3104-9882
-                            </a>
-                        </div>
-                    </div>
-                    <div class="max-h-[80vh] overflow-y-auto pr-2 bg-gray-50 p-4 rounded-xl shadow-inner border border-gray-100">
-                        <h3 class="font-bold mb-4 text-gray-400 uppercase text-[10px] tracking-[0.3em] sticky top-0 bg-gray-50 py-2">Galería de Imágenes</h3>
-                        <img src="${p.image}" class="w-full rounded mb-4 shadow-md border-4 border-white">
-                        ${galeriaHtml}
-                    </div>
-                </div>
-            `;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function cerrarModal() {
-            document.getElementById('modal-detalle').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        cargarPropiedades();
-    </script>
 </body>
 </html>
+
 
