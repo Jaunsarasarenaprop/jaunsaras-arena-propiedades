@@ -1,4 +1,4 @@
-  backend:
+ backend:
   name: git-gateway
   repo: Jaunsarasarenaprop/jaunsaras-arena-propiedades
   branch: main
@@ -55,4 +55,3 @@ collections:
       - label: Descripción
         name: body
         widget: markdown
-   
