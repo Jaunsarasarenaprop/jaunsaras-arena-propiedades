@@ -1,9 +1,8 @@
 backend:
   name: git-gateway
-  repo: Jaunsarasarenaprop/jaunsaras-arena-propiedades # 
+  repo: Jaunsarasarenaprop/jaunsaras-arena-propiedades
   branch: main
 
-# Carpeta donde se guardarán las fotos que subas
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
@@ -13,12 +12,47 @@ collections:
     folder: "content/propiedades"
     create: true
     slug: "{{slug}}"
+
     fields:
-      - {label: "Título de la Propiedad", name: "title", widget: "string"}
-      - {label: "Precio", name: "price", widget: "string", hint: "Ej: USD 50.000 o $15.000.000"}
-      - {label: "Descripción", name: "body", widget: "markdown"}
-      - {label: "Imagen Principal", name: "image", widget: "image"}
-      - {label: "Galería de Fotos", name: "photos", widget: "list", field: {label: "Foto", name: "photo", widget: "image"}}
-      - {label: "Link de Video (YouTube)", name: "video", widget: "string", required: false}
-      - {label: "Ubicación", name: "location", widget: "string"}
-      - {label: "Categoría", name: "category", widget: "select", options: ["Venta", "Alquiler", "Temporario"]}
+      - label: "Título de la Propiedad"
+        name: "title"
+        widget: "string"
+
+      - label: "Precio"
+        name: "price"
+        widget: "string"
+        hint: "Ej: USD 50.000 o $15.000.000"
+
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        options:
+          - "Venta"
+          - "Alquiler"
+          - "Temporario"
+
+      - label: "Ubicación"
+        name: "location"
+        widget: "string"
+        hint: "Ej: El Pato, Berazategui"
+
+      - label: "Imagen Principal"
+        name: "image"
+        widget: "image"
+
+      - label: "Galería de Fotos"
+        name: "photos"
+        widget: "image"
+        multiple: true
+        required: false
+        hint: "Podés seleccionar todas las fotos juntas"
+
+      - label: "Link de Video (YouTube)"
+        name: "video"
+        widget: "string"
+        required: false
+
+      - label: "Descripción"
+        name: "body"
+        widget: "markdown"
+``
