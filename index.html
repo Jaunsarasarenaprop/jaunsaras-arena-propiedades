@@ -18,10 +18,6 @@
       background: rgba(0,0,0,0.85);
       z-index: 1000;
       padding: 20px;
-    }
-
-    #modal-content {
-      max-height: 90vh;
       overflow-y: auto;
     }
   </style>
@@ -66,15 +62,15 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 <!-- PROPIEDAD 1 -->
-<div class="bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
-     onclick="abrirModal(
-       'Loteo en El Pato – Barrio Cerrado',
-       'images/propiedades/destacadas/flyer.png',
-       'Lotes desde 310 m² hasta 510 m².<br><br>
-        Barrio cercado con portón de acceso.<br>
-        A solo 3 cuadras de Colectora Autovía 2 (mano CABA).<br>
-        Zona residencial consolidada.'
-     )">
+<div class="propiedad bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
+     data-titulo="Loteo en El Pato – Barrio Cerrado"
+     data-imagen="images/propiedades/destacadas/flyer.png"
+     data-descripcion="
+     Lotes desde 310 m² hasta 510 m².<br><br>
+     Barrio cercado con portón de acceso.<br>
+     A solo 3 cuadras de Colectora Autovía 2 (mano CABA).<br>
+     Zona residencial consolidada.
+     ">
 
   <img src="images/propiedades/destacadas/flyer.png"
        class="w-full h-64 object-cover rounded-t-xl">
@@ -89,16 +85,16 @@
 </div>
 
 <!-- PROPIEDAD 2 -->
-<div class="bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
-     onclick="abrirModal(
-       'Casa Moderna con Gran Lote – La Arbolada',
-       'images/propiedades/destacadas/propiedad2.jpg',
-       '¡Oportunidad! Casa Moderna en Venta – Lote 57.<br><br>
-        Superficie cubierta: <strong>224 m²</strong><br>
-        Lote: <strong>650 m²</strong> + <strong>200 m²</strong> de reserva.<br><br>
-        Moderna, luminosa y desarrollada en dos plantas.<br><br>
-        <strong>Ubicación:</strong> Barrio privado La Arbolada – Ruta 2 km 42.1'
-     )">
+<div class="propiedad bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
+     data-titulo="Casa Moderna con Gran Lote – La Arbolada"
+     data-imagen="images/propiedades/destacadas/propiedad2.jpg"
+     data-descripcion="
+     ¡Oportunidad! Casa Moderna en Venta – Lote 57.<br><br>
+     Superficie cubierta: <strong>224 m²</strong><br>
+     Lote: <strong>650 m²</strong> + <strong>200 m²</strong> de reserva.<br><br>
+     Moderna, luminosa y desarrollada en dos plantas.<br><br>
+     <strong>Ubicación:</strong> Barrio privado La Arbolada – Ruta 2 km 42.1
+     ">
 
   <img src="images/propiedades/destacadas/propiedad2.jpg"
        class="w-full h-64 object-cover rounded-t-xl">
@@ -116,11 +112,8 @@
 </main>
 
 <!-- MODAL -->
-<div id="modal" onclick="cerrarModal()">
-  <div id="modal-content"
-       class="bg-white max-w-4xl mx-auto rounded-xl relative"
-       onclick="event.stopPropagation()">
-
+<div id="modal">
+  <div class="bg-white max-w-4xl mx-auto rounded-xl relative">
     <button onclick="cerrarModal()"
             class="absolute top-4 right-4 bg-black text-white w-10 h-10 rounded-full z-10">
       ✕
@@ -141,13 +134,15 @@
 </div>
 
 <script>
-function abrirModal(titulo, imagen, descripcion) {
-  document.getElementById("modalTitulo").innerHTML = titulo;
-  document.getElementById("modalImagen").src = imagen;
-  document.getElementById("modalDescripcion").innerHTML = descripcion;
-  document.getElementById("modal").style.display = "block";
-  document.body.style.overflow = "hidden";
-}
+document.querySelectorAll(".propiedad").forEach(card => {
+  card.addEventListener("click", () => {
+    document.getElementById("modalTitulo").innerHTML = card.dataset.titulo;
+    document.getElementById("modalImagen").src = card.dataset.imagen;
+    document.getElementById("modalDescripcion").innerHTML = card.dataset.descripcion;
+    document.getElementById("modal").style.display = "block";
+    document.body.style.overflow = "hidden";
+  });
+});
 
 function cerrarModal() {
   document.getElementById("modal").style.display = "none";
