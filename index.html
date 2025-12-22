@@ -14,6 +14,15 @@
   <style>
     .bg-custom-green { background-color: #2D5A27; }
     .text-custom-green { color: #2D5A27; }
+
+    #modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      overflow-y: auto;
+    }
   </style>
 </head>
 
@@ -22,7 +31,7 @@
   <!-- NAV -->
   <nav class="bg-white shadow-md p-4 sticky top-0 z-50 border-b-4 border-custom-green">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <img src="images/logo.jpg" alt="Jaunsaras Arena Propiedades" class="h-16 object-contain">
+      <img src="images/logo.jpg" class="h-16 object-contain">
       <div class="text-right text-sm font-bold">
         <a href="https://wa.me/5491130687117" class="block text-green-700">
           <i class="fab fa-whatsapp"></i> 11 3068-7117
@@ -50,7 +59,7 @@
     </a>
   </header>
 
-  <!-- PROPIEDADES DESTACADAS -->
+  <!-- PROPIEDADES -->
   <main class="max-w-7xl mx-auto py-12 px-4">
     <h2 class="text-2xl font-bold mb-8 border-b-2 border-custom-green pb-2">
       Propiedades Destacadas
@@ -58,10 +67,9 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- CARD PROPIEDAD -->
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+      <!-- CARD -->
+      <div onclick="abrirModal()" class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
         <img src="images/propiedades/destacadas/flyer.png"
-             alt="Lotes en venta"
              class="w-full h-64 object-cover">
 
         <div class="p-5">
@@ -70,64 +78,66 @@
           </span>
 
           <h3 class="text-xl font-bold mt-3">
-            Lotes en Barrio Cerrado
+            Loteo en El Pato – Barrio Cerrado
           </h3>
 
-          <p class="text-custom-green text-2xl font-black mt-1">
-            Desde USD 35.000
-          </p>
-
           <p class="text-sm text-gray-600 mt-3">
-            Lotes desde 310 m² a 510 m². Barrio cercado con portón,
-            entorno natural y excelente acceso.
+            Click para ver más detalles
           </p>
-
-          <a href="https://wa.me/5491130687117?text=Me interesa el loteo"
-             class="block mt-5 bg-green-600 text-white text-center py-3 rounded-lg font-bold hover:bg-green-700 transition">
-            <i class="fab fa-whatsapp"></i> Consultar
-          </a>
         </div>
       </div>
-
-      <!-- Podés duplicar este bloque para más propiedades -->
 
     </div>
   </main>
 
+  <!-- MODAL -->
+  <div id="modal" onclick="cerrarModal()">
+    <div class="bg-white max-w-4xl mx-auto mt-10 rounded-xl overflow-hidden relative" onclick="event.stopPropagation()">
+      
+      <button onclick="cerrarModal()" class="absolute top-4 right-4 text-white bg-black w-10 h-10 rounded-full">
+        ✕
+      </button>
+
+      <img src="images/propiedades/destacadas/flyer.png" class="w-full object-cover">
+
+      <div class="p-6">
+        <h2 class="text-3xl font-bold mb-4">
+          Loteo en El Pato – Barrio Cerrado
+        </h2>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Lotes desde 310 m² hasta 510 m². Barrio cercado con portón de acceso,
+          a solo 3 cuadras de Colectora Autovía 2 (mano CABA).
+          Zona residencial con vecinos permanentes, entorno natural
+          y excelente proyección.
+        </p>
+
+        <a href="https://wa.me/5491130687117?text=Me interesa el loteo"
+           class="block bg-green-600 text-white text-center py-4 rounded-lg font-bold hover:bg-green-700 transition">
+          <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="bg-gray-900 text-white py-10 px-4 border-t-4 border-custom-green">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-
-      <div>
-        <h3 class="font-bold text-custom-green mb-3">Ubicación</h3>
-        <p class="text-gray-400 text-sm">
-          Calle Colectora Autovía 2 N°12271<br>
-          El Pato – Berazategui
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-custom-green mb-3">Horarios</h3>
-        <p class="text-gray-400 text-sm">
-          Lunes a Viernes<br>
-          10:00 a 12:30 – 16:30 a 19:00
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-custom-green mb-3">Contacto</h3>
-        <p class="text-gray-400 text-sm">
-          <i class="fab fa-whatsapp text-green-500"></i> 11 3068-7117<br>
-          <i class="fab fa-whatsapp text-green-500"></i> 11 3104-9882
-        </p>
-      </div>
-
-    </div>
-
-    <div class="text-center text-xs text-gray-500 mt-8">
+    <div class="text-center text-xs text-gray-500">
       © 2025 Jaunsaras Arena Propiedades
     </div>
   </footer>
+
+  <script>
+    function abrirModal() {
+      document.getElementById("modal").style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal").style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  </script>
 
 </body>
 </html>
