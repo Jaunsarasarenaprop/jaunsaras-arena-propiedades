@@ -5,15 +5,11 @@
   <title>Jaunsaras Arena Propiedades | El Pato</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     .bg-custom-green { background-color: #2D5A27; }
-    .text-custom-green { color: #2D5A27; }
 
     #modal {
       display: none;
@@ -28,151 +24,118 @@
 
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- NAV -->
-  <nav class="bg-white shadow-md p-4 sticky top-0 z-50 border-b-4 border-custom-green">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <img src="images/logo.jpg" class="h-16 object-contain">
-      <div class="text-right text-sm font-bold">
-        <a href="https://wa.me/5491130687117" class="block text-green-700">
-          <i class="fab fa-whatsapp"></i> 11 3068-7117
-        </a>
-        <a href="https://wa.me/5491131049882" class="block text-green-700">
-          <i class="fab fa-whatsapp"></i> 11 3104-9882
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="bg-custom-green text-white text-center py-16 px-4">
-    <h1 class="text-4xl font-bold mb-4 uppercase tracking-wider">
-      Jaunsaras Arena Propiedades
-    </h1>
-    <p class="italic text-lg">
-      Calle Colectora Autovía 2 N°12271 – El Pato
-    </p>
-
-    <a href="https://inmuebles.mercadolibre.com.ar/_CustId_186078242"
-       target="_blank"
-       class="inline-block mt-8 bg-yellow-400 text-blue-900 font-bold px-8 py-4 rounded-full hover:bg-yellow-500 transition">
-      Ver todas en Mercado Libre
-    </a>
-  </header>
-
-  <!-- PROPIEDADES -->
-  <main class="max-w-7xl mx-auto py-12 px-4">
-    <h2 class="text-2xl font-bold mb-8 border-b-2 border-custom-green pb-2">
-      Propiedades Destacadas
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- CARD -->
-      <div onclick="abrirModal()" class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
-        <img src="images/propiedades/destacadas/flyer.png"
-             class="w-full h-64 object-cover">
-
-        <div class="p-5">
-          <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
-            Venta
-          </span>
-
-          <h3 class="text-xl font-bold mt-3">
-            Loteo en El Pato – Barrio Cerrado
-          </h3>
-
-          <p class="text-sm text-gray-600 mt-3">
-            Click para ver más detalles
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- MODAL -->
-  <div id="modal" onclick="cerrarModal()">
-    <div class="bg-white max-w-4xl mx-auto mt-10 rounded-xl overflow-hidden relative" onclick="event.stopPropagation()">
-      
-      <button onclick="cerrarModal()" class="absolute top-4 right-4 text-white bg-black w-10 h-10 rounded-full">
-        ✕
-      </button>
-
-      <img src="images/propiedades/destacadas/flyer.png" class="w-full object-cover">
-
-      <div class="p-6">
-        <h2 class="text-3xl font-bold mb-4">
-          Loteo en El Pato – Barrio Cerrado
-        </h2>
-
-        <p class="text-gray-700 mb-6 leading-relaxed">
-          Lotes desde 310 m² hasta 510 m². Barrio cercado con portón de acceso,
-          a solo 3 cuadras de Colectora Autovía 2 (mano CABA).
-          Zona residencial con vecinos permanentes, entorno natural
-          y excelente proyección.
-        </p>
-
-        <a href="https://wa.me/5491130687117?text=Me interesa el loteo"
-           class="block bg-green-600 text-white text-center py-4 rounded-lg font-bold hover:bg-green-700 transition">
-          <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-        </a>
-      </div>
+<!-- NAV -->
+<nav class="bg-white shadow-md p-4 sticky top-0 z-50 border-b-4 border-custom-green">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <img src="images/logo.jpg" class="h-16 object-contain">
+    <div class="text-right text-sm font-bold">
+      <a href="https://wa.me/5491130687117" class="block text-green-700">
+        <i class="fab fa-whatsapp"></i> 11 3068-7117
+      </a>
+      <a href="https://wa.me/5491131049882" class="block text-green-700">
+        <i class="fab fa-whatsapp"></i> 11 3104-9882
+      </a>
     </div>
   </div>
-<!-- PROPIEDAD DESTACADA -->
-<div 
-  class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition"
-  onclick="abrirModal(
-    'Casa Moderna con Gran Lote – La Arbolada',
-    'images/propiedades/destacadas/propiedad2.jpg',
-    '¡Oportunidad! Casa Moderna con Gran Lote en La Arbolada.<br><br>
-    <strong>Casa Moderna en Venta – Lote 57</strong><br><br>
-    Superficie total construida: <strong>224 m²</strong><br>
-    Lote: <strong>650 m²</strong> + <strong>200 m²</strong> de reserva al fondo.<br><br>
-    Moderna y luminosa propiedad desarrollada en dos plantas, ubicada sobre un amplio lote con fondo libre. Ideal para quienes buscan confort, calidad constructiva y versatilidad de espacios, con un valor de mercado excepcional.<br><br>
-    <strong>Ubicación:</strong> Barrio privado La Arbolada – Ruta 2, km 42.1'
-  )"
->
-  <img 
-    src="images/propiedades/destacadas/propiedad2.jpg"
-    class="w-full h-64 object-cover"
-    alt="Casa Moderna La Arbolada"
-  >
+</nav>
 
-  <div class="p-5">
-    <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
-      Venta
-    </span>
+<!-- HERO -->
+<header class="bg-custom-green text-white text-center py-16 px-4">
+  <h1 class="text-4xl font-bold mb-4 uppercase">Jaunsaras Arena Propiedades</h1>
+  <p class="italic">Calle Colectora Autovía 2 N°12271 – El Pato</p>
 
-    <h3 class="text-xl font-bold mt-3">
-      Casa Moderna – La Arbolada
-    </h3>
+  <a href="https://inmuebles.mercadolibre.com.ar/_CustId_186078242"
+     target="_blank"
+     class="inline-block mt-8 bg-yellow-400 text-blue-900 font-bold px-8 py-4 rounded-full">
+    Ver todas en Mercado Libre
+  </a>
+</header>
 
-    <p class="text-sm text-gray-600 mt-3">
-      Click para ver más detalles
-    </p>
-  </div>
+<!-- PROPIEDADES -->
+<main class="max-w-7xl mx-auto py-12 px-4">
+<h2 class="text-2xl font-bold mb-8 border-b-2 border-custom-green pb-2">
+Propiedades Destacadas
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- PROPIEDAD 1 -->
+<div onclick="abrirModal(
+  'Loteo en El Pato – Barrio Cerrado',
+  'images/propiedades/destacadas/flyer.png',
+  'Lotes desde 310 m² hasta 510 m².<br><br>
+   Barrio cercado con portón de acceso.<br>
+   A solo 3 cuadras de Colectora Autovía 2 (mano CABA).<br>
+   Zona residencial con vecinos permanentes y excelente proyección.'
+)"
+class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
+
+<img src="images/propiedades/destacadas/flyer.png" class="w-full h-64 object-cover">
+
+<div class="p-5">
+<span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">Venta</span>
+<h3 class="text-xl font-bold mt-3">Loteo en El Pato</h3>
+<p class="text-sm text-gray-600 mt-3">Click para ver más detalles</p>
+</div>
 </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-white py-10 px-4 border-t-4 border-custom-green">
-    <div class="text-center text-xs text-gray-500">
-      © 2025 Jaunsaras Arena Propiedades
-    </div>
-  </footer>
+<!-- PROPIEDAD 2 -->
+<div onclick="abrirModal(
+  'Casa Moderna con Gran Lote – La Arbolada',
+  'images/propiedades/destacadas/propiedad2.jpg',
+  '¡Oportunidad! Casa Moderna con Gran Lote.<br><br>
+   <strong>Casa Moderna en Venta – Lote 57</strong><br><br>
+   Superficie construida: <strong>224 m²</strong><br>
+   Lote: <strong>650 m²</strong> + <strong>200 m²</strong> de reserva.<br><br>
+   Moderna y luminosa, desarrollada en dos plantas.<br>
+   <strong>Ubicación:</strong> Barrio Privado La Arbolada – Ruta 2 km 42.1'
+)"
+class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
 
-  <script>
-    function abrirModal() {
-      document.getElementById("modal").style.display = "block";
-      document.body.style.overflow = "hidden";
-    }
+<img src="images/propiedades/destacadas/propiedad2.jpg" class="w-full h-64 object-cover">
 
-    function cerrarModal() {
-      document.getElementById("modal").style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-  </script>
+<div class="p-5">
+<span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">Venta</span>
+<h3 class="text-xl font-bold mt-3">Casa Moderna – La Arbolada</h3>
+<p class="text-sm text-gray-600 mt-3">Click para ver más detalles</p>
+</div>
+</div>
+
+</div>
+</main>
+
+<!-- MODAL -->
+<div id="modal" onclick="cerrarModal()">
+<div class="bg-white max-w-4xl mx-auto mt-10 rounded-xl overflow-hidden relative" onclick="event.stopPropagation()">
+<button onclick="cerrarModal()" class="absolute top-4 right-4 bg-black text-white w-10 h-10 rounded-full">✕</button>
+
+<img id="modalImg" class="w-full object-cover">
+<div class="p-6">
+<h2 id="modalTitle" class="text-3xl font-bold mb-4"></h2>
+<p id="modalDesc" class="text-gray-700 mb-6 leading-relaxed"></p>
+
+<a href="https://wa.me/5491130687117"
+class="block bg-green-600 text-white text-center py-4 rounded-lg font-bold">
+<i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+</a>
+</div>
+</div>
+</div>
+
+<script>
+function abrirModal(titulo, imagen, descripcion) {
+  document.getElementById("modalTitle").innerHTML = titulo;
+  document.getElementById("modalImg").src = imagen;
+  document.getElementById("modalDesc").innerHTML = descripcion;
+  document.getElementById("modal").style.display = "block";
+  document.body.style.overflow = "hidden";
+}
+
+function cerrarModal() {
+  document.getElementById("modal").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+</script>
 
 </body>
 </html>
-
