@@ -5,8 +5,10 @@
   <title>Jaunsaras Arena Propiedades | El Pato</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
@@ -18,6 +20,7 @@
       inset: 0;
       background: rgba(0,0,0,0.8);
       z-index: 1000;
+      overflow-y: auto;
     }
   </style>
 </head>
@@ -25,7 +28,7 @@
 <body class="bg-gray-100 text-gray-800">
 
 <!-- NAV -->
-<nav class="bg-white shadow-md p-4 border-b-4 border-custom-green">
+<nav class="bg-white shadow-md p-4 sticky top-0 z-50 border-b-4 border-custom-green">
   <div class="max-w-7xl mx-auto flex justify-between items-center">
     <img src="images/logo.jpg" class="h-16">
     <div class="text-right text-sm font-bold">
@@ -61,30 +64,47 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 <!-- PROPIEDAD 1 -->
-<div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition"
-onclick="abrirModal(
-'Loteo en El Pato – Barrio Cerrado',
-'images/propiedades/destacadas/flyer.png',
-'Lotes desde 310 m² hasta 510 m².<br><br>Barrio cercado con portón de acceso.<br><br>A solo 3 cuadras de Colectora Autovía 2 (mano CABA). Zona residencial con vecinos permanentes.'
-)">
+<div
+  onclick="abrirModal(
+    'Loteo en El Pato – Barrio Cerrado',
+    'images/propiedades/destacadas/flyer.png',
+    'Lotes desde 310 m² hasta 510 m².<br><br>
+     Barrio cercado con portón de acceso.<br>
+     A solo 3 cuadras de Colectora Autovía 2 (mano CABA).<br>
+     Zona residencial con vecinos permanentes.'
+  )"
+  class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
+
   <img src="images/propiedades/destacadas/flyer.png" class="w-full h-64 object-cover">
+
   <div class="p-5">
-    <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">Venta</span>
+    <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
+      Venta
+    </span>
     <h3 class="text-xl font-bold mt-3">Loteo en El Pato</h3>
     <p class="text-sm text-gray-600 mt-3">Click para ver más detalles</p>
   </div>
 </div>
 
 <!-- PROPIEDAD 2 -->
-<div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition"
-onclick="abrirModal(
-'Casa Moderna con Gran Lote – La Arbolada',
-'images/propiedades/destacadas/propiedad2.jpg',
-'¡Oportunidad! Casa Moderna en Venta – Lote 57.<br><br>Superficie construida: 224 m².<br>Lote: 650 m² + 200 m² de reserva al fondo.<br><br>Propiedad moderna y luminosa en dos plantas, con fondo libre y excelente calidad constructiva.<br><br>Ubicación: Barrio privado La Arbolada – Ruta 2 km 42.1.'
-)">
+<div
+  onclick="abrirModal(
+    'Casa Moderna con Gran Lote – La Arbolada',
+    'images/propiedades/destacadas/propiedad2.jpg',
+    '¡Oportunidad! Casa Moderna en Venta – Lote 57.<br><br>
+     Superficie cubierta: <strong>224 m²</strong><br>
+     Lote: <strong>650 m²</strong> + <strong>200 m²</strong> de reserva.<br><br>
+     Moderna y luminosa, desarrollada en dos plantas.<br><br>
+     <strong>Ubicación:</strong> Barrio privado La Arbolada – Ruta 2 km 42.1'
+  )"
+  class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
+
   <img src="images/propiedades/destacadas/propiedad2.jpg" class="w-full h-64 object-cover">
+
   <div class="p-5">
-    <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">Venta</span>
+    <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
+      Venta
+    </span>
     <h3 class="text-xl font-bold mt-3">Casa Moderna – La Arbolada</h3>
     <p class="text-sm text-gray-600 mt-3">Click para ver más detalles</p>
   </div>
@@ -95,12 +115,22 @@ onclick="abrirModal(
 
 <!-- MODAL -->
 <div id="modal" onclick="cerrarModal()">
-  <div class="bg-white max-w-4xl mx-auto mt-10 rounded-xl relative max-h-[90vh] overflow-y-auto"
-     onclick="event.stopPropagation()">
-    <img id="modalImagen" class="w-full object-cover">
+  <div class="bg-white max-w-4xl mx-auto my-10 rounded-xl overflow-hidden relative"
+       onclick="event.stopPropagation()">
+
+    <button onclick="cerrarModal()"
+            class="absolute top-4 right-4 bg-black text-white w-10 h-10 rounded-full z-10">
+      ✕
+    </button>
+
+    <!-- 🔧 CORRECCIÓN CLAVE -->
+    <img id="modalImagen"
+         class="w-full max-h-[70vh] object-contain bg-black">
+
     <div class="p-6">
       <h2 id="modalTitulo" class="text-3xl font-bold mb-4"></h2>
       <p id="modalDescripcion" class="text-gray-700 leading-relaxed"></p>
+
       <a href="https://wa.me/5491130687117"
          class="block mt-6 bg-green-600 text-white text-center py-4 rounded-lg font-bold">
         <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
@@ -109,6 +139,7 @@ onclick="abrirModal(
   </div>
 </div>
 
+<!-- JS -->
 <script>
 function abrirModal(titulo, imagen, descripcion) {
   document.getElementById("modalTitulo").innerHTML = titulo;
@@ -126,4 +157,3 @@ function cerrarModal() {
 
 </body>
 </html>
-
