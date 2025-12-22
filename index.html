@@ -95,8 +95,8 @@ onclick="abrirModal(
 
 <!-- MODAL -->
 <div id="modal" onclick="cerrarModal()">
-  <div class="bg-white max-w-4xl mx-auto mt-10 rounded-xl overflow-hidden relative" onclick="event.stopPropagation()">
-    <button onclick="cerrarModal()" class="absolute top-4 right-4 bg-black text-white w-10 h-10 rounded-full">✕</button>
+  <div class="bg-white max-w-4xl mx-auto mt-10 rounded-xl relative max-h-[90vh] overflow-y-auto"
+     onclick="event.stopPropagation()">
     <img id="modalImagen" class="w-full object-cover">
     <div class="p-6">
       <h2 id="modalTitulo" class="text-3xl font-bold mb-4"></h2>
@@ -126,3 +126,4 @@ function cerrarModal() {
 
 </body>
 </html>
+
