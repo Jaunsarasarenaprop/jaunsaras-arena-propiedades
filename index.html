@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Jaunsaras Arena Propiedades | El Pato</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Jaunsaras Arena Propiedades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
@@ -18,8 +15,14 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       z-index: 1000;
+      padding: 20px;
+    }
+
+    #modal-content {
+      max-height: 90vh;
+      overflow-y: auto;
     }
   </style>
 </head>
@@ -63,18 +66,18 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 <!-- PROPIEDAD 1 -->
-<div
-  onclick="abrirModal(
-    'Loteo en El Pato – Barrio Cerrado',
-    'images/propiedades/destacadas/flyer.png',
-    'Lotes desde 310 m² hasta 510 m².<br><br>
-     Barrio cercado con portón de acceso.<br>
-     A solo 3 cuadras de Colectora Autovía 2 (mano CABA).<br>
-     Zona residencial con vecinos permanentes.'
-  )"
-  class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
+<div class="bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
+     onclick="abrirModal(
+       'Loteo en El Pato – Barrio Cerrado',
+       'images/propiedades/destacadas/flyer.png',
+       'Lotes desde 310 m² hasta 510 m².<br><br>
+        Barrio cercado con portón de acceso.<br>
+        A solo 3 cuadras de Colectora Autovía 2 (mano CABA).<br>
+        Zona residencial consolidada.'
+     )">
 
-  <img src="images/propiedades/destacadas/flyer.png" class="w-full h-64 object-cover">
+  <img src="images/propiedades/destacadas/flyer.png"
+       class="w-full h-64 object-cover rounded-t-xl">
 
   <div class="p-5">
     <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
@@ -86,19 +89,19 @@
 </div>
 
 <!-- PROPIEDAD 2 -->
-<div
-  onclick="abrirModal(
-    'Casa Moderna con Gran Lote – La Arbolada',
-    'images/propiedades/destacadas/propiedad2.jpg',
-    '¡Oportunidad! Casa Moderna en Venta – Lote 57.<br><br>
-     Superficie cubierta: <strong>224 m²</strong><br>
-     Lote: <strong>650 m²</strong> + <strong>200 m²</strong> de reserva.<br><br>
-     Moderna y luminosa desarrollada en dos plantas.<br><br>
-     <strong>Ubicación:</strong> Barrio privado La Arbolada – Ruta 2 km 42.1'
-  )"
-  class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition">
+<div class="bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
+     onclick="abrirModal(
+       'Casa Moderna con Gran Lote – La Arbolada',
+       'images/propiedades/destacadas/propiedad2.jpg',
+       '¡Oportunidad! Casa Moderna en Venta – Lote 57.<br><br>
+        Superficie cubierta: <strong>224 m²</strong><br>
+        Lote: <strong>650 m²</strong> + <strong>200 m²</strong> de reserva.<br><br>
+        Moderna, luminosa y desarrollada en dos plantas.<br><br>
+        <strong>Ubicación:</strong> Barrio privado La Arbolada – Ruta 2 km 42.1'
+     )">
 
-  <img src="images/propiedades/destacadas/propiedad2.jpg" class="w-full h-64 object-cover">
+  <img src="images/propiedades/destacadas/propiedad2.jpg"
+       class="w-full h-64 object-cover rounded-t-xl">
 
   <div class="p-5">
     <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
@@ -113,8 +116,9 @@
 </main>
 
 <!-- MODAL -->
-<div id="modal" onclick="cerrarModal()" class="flex items-center justify-center p-4">
-  <div class="bg-white max-w-4xl w-full max-h-[90vh] rounded-xl overflow-y-auto relative"
+<div id="modal" onclick="cerrarModal()">
+  <div id="modal-content"
+       class="bg-white max-w-4xl mx-auto rounded-xl relative"
        onclick="event.stopPropagation()">
 
     <button onclick="cerrarModal()"
@@ -122,7 +126,7 @@
       ✕
     </button>
 
-    <img id="modalImagen" class="w-full max-h-[400px] object-cover">
+    <img id="modalImagen" class="w-full object-cover rounded-t-xl">
 
     <div class="p-6">
       <h2 id="modalTitulo" class="text-3xl font-bold mb-4"></h2>
@@ -136,13 +140,12 @@
   </div>
 </div>
 
-<!-- JS -->
 <script>
 function abrirModal(titulo, imagen, descripcion) {
   document.getElementById("modalTitulo").innerHTML = titulo;
   document.getElementById("modalImagen").src = imagen;
   document.getElementById("modalDescripcion").innerHTML = descripcion;
-  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modal").style.display = "block";
   document.body.style.overflow = "hidden";
 }
 
