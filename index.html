@@ -1,139 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Jaunsaras Arena Propiedades | El Pato</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     .bg-custom-green { background-color: #2D5A27; }
     .text-custom-green { color: #2D5A27; }
-    .hero-bg {
-      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-      url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400");
-      background-size: cover;
-      background-position: center;
-    }
   </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
-<!-- NAV -->
-<nav class="bg-white shadow-md border-b-4 border-custom-green sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <img src="logo.jpg" alt="Jaunsaras Arena Propiedades" class="h-14">
-
-    <div class="text-right text-sm font-bold text-green-700">
-      <a href="https://wa.me/5491130687117" class="block hover:text-green-500">
-        <i class="fab fa-whatsapp"></i> 11 3068-7117
-      </a>
-      <a href="https://wa.me/5491131049882" class="block hover:text-green-500">
-        <i class="fab fa-whatsapp"></i> 11 3104-9882
-      </a>
+  <!-- NAV -->
+  <nav class="bg-white shadow-md p-4 sticky top-0 z-50 border-b-4 border-custom-green">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <img src="images/logo.jpg" alt="Jaunsaras Arena Propiedades" class="h-16 object-contain">
+      <div class="text-right text-sm font-bold">
+        <a href="https://wa.me/5491130687117" class="block text-green-700">
+          <i class="fab fa-whatsapp"></i> 11 3068-7117
+        </a>
+        <a href="https://wa.me/5491131049882" class="block text-green-700">
+          <i class="fab fa-whatsapp"></i> 11 3104-9882
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<header class="hero-bg text-white text-center py-20 px-4">
-  <h1 class="text-4xl md:text-5xl font-bold uppercase mb-4">
-    Jaunsaras Arena Propiedades
-  </h1>
-  <p class="italic mb-8">
-    Calle Colectora Autovía 2 · El Pato · Berazategui
-  </p>
-
-  <a href="https://inmuebles.mercadolibre.com.ar/_CustId_186078242"
-     target="_blank"
-     class="inline-block bg-yellow-400 text-blue-900 font-extrabold px-8 py-4 rounded-full hover:bg-yellow-500 transition shadow-xl">
-    VER TODAS LAS PROPIEDADES EN MERCADO LIBRE
-    <i class="fas fa-external-link-alt ml-2"></i>
-  </a>
-</header>
-
-<!-- DESTACADAS -->
-<main class="container mx-auto px-4 py-16">
-
-  <div class="flex justify-between items-end mb-10 border-b-2 border-custom-green pb-2">
-    <h2 class="text-2xl font-bold">Propiedades Destacadas</h2>
-    <p class="text-sm italic text-gray-500">Selección especial</p>
-  </div>
-
-  <!-- GRID DE PROPIEDADES -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-   <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-
-  <!-- FOTO -->
-  <img src="images/propiedades/flyer.png" class="h-64 w-full object-cover">
-
-  <div class="p-5">
-
-    <!-- CATEGORÍA -->
-    <span class="text-xs bg-custom-green text-white px-2 py-1 rounded uppercase">
-      Venta
-    </span>
-
-    <!-- TITULO -->
-    <h3 class="text-xl font-bold mt-2">
-      Lotes en Barrio Cercado – El Pato
-    </h3>
-
-    <!-- PRECIO -->
-    <p class="text-custom-green text-2xl font-black mt-1">
-      Consultar precio
+  <!-- HERO -->
+  <header class="bg-custom-green text-white text-center py-16 px-4">
+    <h1 class="text-4xl font-bold mb-4 uppercase tracking-wider">
+      Jaunsaras Arena Propiedades
+    </h1>
+    <p class="italic text-lg">
+      Calle Colectora Autovía 2 N°12271 – El Pato
     </p>
 
-    <!-- DESCRIPCIÓN -->
-    <p class="text-sm text-gray-600 mt-3">
-      Lotes desde 310 m² hasta 510 m².
-      Barrio cercado con portón de acceso y rápida salida a Autovía 2. Con Financiación 
-    </p>
-
-    <!-- BOTÓN -->
-    <a href="https://wa.me/5491130687117"
-       class="mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-700 transition">
-      Consultar por WhatsApp
+    <a href="https://inmuebles.mercadolibre.com.ar/_CustId_186078242"
+       target="_blank"
+       class="inline-block mt-8 bg-yellow-400 text-blue-900 font-bold px-8 py-4 rounded-full hover:bg-yellow-500 transition">
+      Ver todas en Mercado Libre
     </a>
+  </header>
 
-  </div>
-</div>
+  <!-- PROPIEDADES DESTACADAS -->
+  <main class="max-w-7xl mx-auto py-12 px-4">
+    <h2 class="text-2xl font-bold mb-8 border-b-2 border-custom-green pb-2">
+      Propiedades Destacadas
+    </h2>
 
-  </div>
-</main>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-white py-12 px-4 border-t-4 border-custom-green">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-    <div>
-      <h3 class="text-custom-green font-bold mb-3">Ubicación</h3>
-      <p class="text-gray-400">Calle Colectora Autovía 2 N°12271</p>
-      <p class="text-gray-400">El Pato · Berazategui</p>
+      <!-- CARD PROPIEDAD -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <img src="images/propiedades/destacadas/flyer.png"
+             alt="Lotes en venta"
+             class="w-full h-64 object-cover">
+
+        <div class="p-5">
+          <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
+            Venta
+          </span>
+
+          <h3 class="text-xl font-bold mt-3">
+            Lotes en Barrio Cerrado
+          </h3>
+
+          <p class="text-custom-green text-2xl font-black mt-1">
+            Desde USD 35.000
+          </p>
+
+          <p class="text-sm text-gray-600 mt-3">
+            Lotes desde 310 m² a 510 m². Barrio cercado con portón,
+            entorno natural y excelente acceso.
+          </p>
+
+          <a href="https://wa.me/5491130687117?text=Me interesa el loteo"
+             class="block mt-5 bg-green-600 text-white text-center py-3 rounded-lg font-bold hover:bg-green-700 transition">
+            <i class="fab fa-whatsapp"></i> Consultar
+          </a>
+        </div>
+      </div>
+
+      <!-- Podés duplicar este bloque para más propiedades -->
+
     </div>
-    <div>
-      <h3 class="text-custom-green font-bold mb-3">Horarios</h3>
-      <p class="text-gray-400">Lunes a Viernes</p>
-      <p class="text-gray-400">10:00 a 12:30 · 16:30 a 19:00</p>
-    </div>
-    <div>
-      <h3 class="text-custom-green font-bold mb-3">Contactos</h3>
-      <p class="text-gray-400"><i class="fab fa-whatsapp text-green-500"></i> 11 3068-7117</p>
-      <p class="text-gray-400"><i class="fab fa-whatsapp text-green-500"></i> 11 3104-9882</p>
-    </div>
-  </div>
+  </main>
 
-  <div class="text-center text-gray-500 text-xs mt-10 border-t border-gray-800 pt-6">
-    © 2025 Jaunsaras Arena Propiedades. Todos los derechos reservados.
-  </div>
-</footer>
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-10 px-4 border-t-4 border-custom-green">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+      <div>
+        <h3 class="font-bold text-custom-green mb-3">Ubicación</h3>
+        <p class="text-gray-400 text-sm">
+          Calle Colectora Autovía 2 N°12271<br>
+          El Pato – Berazategui
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-custom-green mb-3">Horarios</h3>
+        <p class="text-gray-400 text-sm">
+          Lunes a Viernes<br>
+          10:00 a 12:30 – 16:30 a 19:00
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-custom-green mb-3">Contacto</h3>
+        <p class="text-gray-400 text-sm">
+          <i class="fab fa-whatsapp text-green-500"></i> 11 3068-7117<br>
+          <i class="fab fa-whatsapp text-green-500"></i> 11 3104-9882
+        </p>
+      </div>
+
+    </div>
+
+    <div class="text-center text-xs text-gray-500 mt-8">
+      © 2025 Jaunsaras Arena Propiedades
+    </div>
+  </footer>
 
 </body>
 </html>
-
