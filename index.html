@@ -109,16 +109,22 @@
 </div>
 
 <!-- PROPIEDAD 3 -->
-<div class="bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
-     onclick="abrirModal(
-       'Casa en venta – Country El Pato',
-       'images/propiedades/destacadas/propiedad3.JPG',
-       'UF 153/154<br><br>
-        Superficie del lote: <strong>700 m²</strong> (aprox.)<br>
-        Superficie cubierta: <strong>230 m²</strong> (aprox.)<br><br>
-        Casa de ladrillo a la vista con encanto antiguo y detalles modernos.<br><br>
-        Combina estructura rústica y cálida con aberturas antiguas adaptadas, techo de chapa para mayor durabilidad y un estilo único que integra carácter y confort.'
-     )">
+<div class="propiedad bg-white rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition"
+     data-titulo="Casa en venta Country El Pato"
+     data-imagen="images/propiedades/destacadas/propiedad3.JPG"
+     data-descripcion="
+     <strong>UF 153 / 154</strong><br><br>
+
+     Superficie del lote: <strong>700 m²</strong> (aprox.)<br>
+     Superficie cubierta: <strong>230 m²</strong> (aprox.)<br><br>
+
+     Casa de ladrillo a la vista con encanto antiguo y detalles modernos.<br><br>
+
+     Esta encantadora propiedad combina el carácter de lo antiguo con comodidades modernas.
+     Su estructura de ladrillo a la vista le otorga un estilo rústico y cálido, mientras que
+     las aberturas antiguas adaptadas aportan elegancia y personalidad.
+     El techo de chapa asegura durabilidad y resistencia.
+     ">
 
   <img src="images/propiedades/destacadas/propiedad3.JPG"
        class="w-full h-64 object-cover rounded-t-xl">
@@ -127,9 +133,11 @@
     <span class="text-xs font-bold text-white bg-custom-green px-2 py-1 rounded uppercase">
       Venta
     </span>
+
     <h3 class="text-xl font-bold mt-3">
-      Casa en venta – Country El Pato
+      Casa en venta Country El Pato
     </h3>
+
     <p class="text-sm text-gray-600 mt-3">
       Click para ver más detalles
     </p>
@@ -180,5 +188,6 @@ function cerrarModal() {
 
 </body>
 </html>
+
 
 
